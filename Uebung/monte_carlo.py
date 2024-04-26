@@ -18,10 +18,11 @@ def get_trial_x(x_ini, x_delta):
   x_trial = x_ini
   step = x_delta * (2 * random.uniform(0.0, 1.0) - 1)
   x_trial[idim] = x_trial[idim] + step
+  
+  return(x_trial)
 
 def monte_carlo(n_step, x_ini, x_delta, e, temp):
   for i in range(n_step):
-    print('tut')
     x_trial = get_trial_x(x_ini, x_delta)
     e_trial = ackley(x_trial)
     flag = False
